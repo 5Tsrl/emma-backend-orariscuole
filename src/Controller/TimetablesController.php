@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace Orariscuole\Controller;
 
+use Orariscuole\Controller\AppController;
+use Orariscuole\Model\Table\TimeslotsTable;
 use App\Notification\timetableReadyNotification;
-use Cake\Utility\Hash;
 use DateTime;
 use Error;
 
@@ -17,6 +18,8 @@ use Error;
  */
 class TimetablesController extends AppController
 {
+  private TimeslotsTable $timeslots;
+
   /**
    * Index method
    *
@@ -70,6 +73,7 @@ class TimetablesController extends AppController
   public function add()
   {
     $this->allowRolesOnly(["admin", "superiori"]);
+    $this->timeslots = $this->fetchTable("Orariscuole.Timeslots");
 
     $timetable = $this->Timetables->newEmptyEntity();
     if ($this->request->is('post')) {
@@ -85,10 +89,10 @@ class TimetablesController extends AppController
       if ($this->Timetables->save($timetable)) {
         //Adesso che ho salvato il timetable, devo aggiornare gli orari (TimeSlots)
         $req_time_in = $this->request->getData('tab_in');
-        $this->Timetables->Timeslots->salva($req_time_in, $timetable->id, 0);
+        $this->timeslots->salva($req_time_in, $timetable->id, 0);
 
         $req_time_out = $this->request->getData('tab_out');
-        $this->Timetables->Timeslots->salva($req_time_out, $timetable->id, 1);
+        $this->timeslots->salva($req_time_out, $timetable->id, 1);
 
         if (!$this->request->is('json')) {
           $this->Flash->success(__('The timetable has been saved.'));
@@ -115,8 +119,9 @@ class TimetablesController extends AppController
    * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
    */
   public function edit($id = null)
-  {
+  {    
     $this->allowRolesOnly(["admin", "superiori"]);
+    $this->timeslots = $this->fetchTable("Orariscuole.Timeslots");
 
     $timetable = $this->Timetables->get($id, [
       'contain' => [],
@@ -133,10 +138,10 @@ class TimetablesController extends AppController
       if ($this->Timetables->save($timetable)) {
         //Adesso che ho salvato il timetable, devo aggiornare gli orari (TimeSlots)
         $req_time_in = $this->request->getData('tab_in');
-        $this->Timetables->Timeslots->salva($req_time_in, $timetable->id, 0);
+        $this->timeslots->salva($req_time_in, $timetable->id, 0);
 
         $req_time_out = $this->request->getData('tab_out');
-        $this->Timetables->Timeslots->salva($req_time_out, $timetable->id, 1);
+        $this->timeslots->salva($req_time_out, $timetable->id, 1);
 
         if (!$this->request->is('json')) {
           $this->Flash->success(__('The timetable has been saved.'));

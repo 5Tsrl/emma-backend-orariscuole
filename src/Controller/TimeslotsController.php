@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace Orariscuole\Controller;
 
+use Orariscuole\Controller\AppController;
 use Cake\Datasource\ConnectionManager;
 use Cake\I18n\FrozenTime;
 use Exception;

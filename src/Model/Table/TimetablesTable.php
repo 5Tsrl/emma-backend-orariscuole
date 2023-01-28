@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Model\Table;
+namespace Orariscuole\Model\Table;
 
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
