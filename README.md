@@ -1,11 +1,15 @@
 # Orariscuole plugin for CakePHP
 
 ## Installation
+This plugin is installed simply by creating a folder starting with a Capital Letter in the /plugins folders
 
-You can install this plugin into your CakePHP application using [composer](https://getcomposer.org).
-
-The recommended way to install composer packages is:
-
+```bash
+cd plugins
+git clone https://bitbucket.org/mobilitymanagerplatform/emma-orariscuole/
+mv emma-orariscuole Orariscuole
 ```
-composer require your-name-here/orariscuole
-```
+
+## Creation of specific users
+- Agenzia o Azienda di Trasporto: agenzia@nomail.com
+- Preside : preside@nomail.com
+
