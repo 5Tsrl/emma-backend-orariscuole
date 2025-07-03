@@ -5,8 +5,8 @@ This plugin is installed simply by creating a folder starting with a Capital Let
 
 ```bash
 cd plugins
-git clone https://bitbucket.org/mobilitymanagerplatform/emma-orariscuole/
-mv emma-orariscuole Orariscuole
+git clone https://github.com/5Tsrl/emma-backend-orariscuole.git/
+mv emma-backend-orariscuole Orariscuole
 ```
 
 ## Creation of specific users

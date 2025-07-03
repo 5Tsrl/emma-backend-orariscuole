@@ -70,5 +70,5 @@ platforms:
   - web
 releaseDate: '2023-09-01'
 softwareType: standalone/web
-softwareVersion: 1.23.0901
-url: 'https://bitbucket.org/mobilitymanagerplatform/emma-orariscuole'
+softwareVersion: 1.25.0701
+url: 'https://github.com/5Tsrl/emma-backend-orariscuole.git'
