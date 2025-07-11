@@ -25,12 +25,12 @@ description:
     genericName: EMMA-OrariScuole
     localisedName: EMMA-OrariScuole
     longDescription: |
-      EMMA - Electronic Mobility Management Application - School Schedule Version
-      EMMA is a Electronic Mobility Management Application, developed by 5T, the Transport Authority of Turin, Italy.
+      EMMA 
+      MMA is a web-based application designed and developed by 5T on behalf of Regione Piemonte.
       This application serves as a repository of all the Timetalbes of the schools in the territory of the Transport Authority of Turin,
       so that planning of public transport can be anchieved with a proper knowledge of the school schedules.
     shortDescription: |-
-      EMMA - Electronic Mobility Management Application. 
+      EMMA . 
       Schedules of the Schools of the Province of Turin.
   it:
     features:
